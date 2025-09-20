@@ -57,7 +57,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="text-center text-xs mt-6">
-        &copy;2025 E-cart | Designed by M S 
+        &copy;2025 e-cartify | Designed by M S 
       </div>
     </footer>
   );
