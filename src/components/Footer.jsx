@@ -1,6 +1,5 @@
 import {  Calendar, Clock10, Facebook, Instagram, MapPin, Phone, Twitter, Youtube, } from "lucide-react";
 import logo from "../assets/img/logo.png";
-import ecart from "../assets/img/ecart.png";
 
 import app from "../assets/img/pay/app.jpg";
 import play from "../assets/img/pay/play.jpg";
@@ -16,7 +15,6 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div>
           <img src={logo} alt="Logo" className="mb-4 h-10" />
-          {/* <h3 className="font-bold">Contact</h3> */}
           <div className="flex flex-col gap-4">
                 <p className=" flex gap-2"><span><MapPin className="w-4 h-4 mt-[2px]"/></span> Panagal Park, near Indian Bank, T. Nagar, Chennai, Tamil Nadu 600017 </p>
 

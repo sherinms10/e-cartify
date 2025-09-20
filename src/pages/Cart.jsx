@@ -1,9 +1,8 @@
-// src/pages/Cart.jsx
+
 import { useEffect, useState } from "react";
 import { Trash2 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 
-// Helper: convert ₹ strings to numbers
 function parsePrice(value) {
   if (!value) return 0;
   return Number(value.toString().replace(/[₹,]/g, "")) || 0;
@@ -13,13 +12,12 @@ export default function Cart() {
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
 
-  // Load cart from localStorage
   useEffect(() => {
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCartItems(storedCart);
   }, []);
 
-  // Remove item
+  
   const removeItem = (id, size) => {
     const updatedCart = cartItems.filter(
       (item) => !(item.id === id && (item.size || "") === (size || ""))
@@ -28,7 +26,7 @@ export default function Cart() {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
-  // Totals (using parsePrice)
+  
   const totalPrice = cartItems.reduce(
     (sum, i) => sum + parsePrice(i.price) * (i.qty || 1),
     0
@@ -41,12 +39,12 @@ export default function Cart() {
     0
   );
 
-  const totalAmount = totalPrice; // before platform fees/coupons
+  const totalAmount = totalPrice; 
 
   return (
     <div className="bg-gray-50 min-h-screen p-4 md:p-8">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Left - Cart Items */}
+       
         <div className="lg:col-span-2 rounded-md p-4 shadow bg-white">
   {cartItems.length > 0 ? (
     <div className="space-y-4 max-h-[350px] overflow-y-auto pr-2">
@@ -55,7 +53,7 @@ export default function Cart() {
           key={idx}
           className="bg-white rounded shadow p-4 flex gap-4 items-center"
         >
-          {/* Image */}
+        
           <Link to={`/product/${item.id}`}>
             <img
               src={item.img}
@@ -64,7 +62,7 @@ export default function Cart() {
             />
           </Link>
 
-          {/* Info */}
+      
           <div className="flex-1">
             <Link to={`/product/${item.id}`}>
               <h3 className="font-semibold text-gray-800 line-clamp-1 hover:text-teal-500">
@@ -86,7 +84,6 @@ export default function Cart() {
             </div>
           </div>
 
-          {/* Price */}
           <p className="font-semibold text-gray-700">
             ₹{(parsePrice(item.price) * item.qty).toLocaleString()}
           </p>
@@ -99,7 +96,6 @@ export default function Cart() {
     </div>
   )}
 
-  {/* Place Order Button */}
   {cartItems.length > 0 && (
     <div className="bg-white shadow p-4 text-right mt-4">
       <button
@@ -113,7 +109,6 @@ export default function Cart() {
 </div>
 
 
-        {/* Right - Price Details */}
         {cartItems.length > 0 && (
           <div className="bg-white rounded shadow p-6 h-fit">
             <h3 className="text-lg font-bold text-gray-700 mb-4">

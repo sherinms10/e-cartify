@@ -1,7 +1,4 @@
-// src/pages/Blog.jsx
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import Newsletter from "../components/Newsletter";
+
 import b19 from "../assets/img/banner/b19.jpg"
 import b1 from "../assets/img/blog/b1.jpg"
 import b2 from "../assets/img/blog/b2.jpg"
@@ -23,7 +20,7 @@ const blogs = [
 export default function Blog() {
   return (
     <>
-      {/* Blog Header */}
+  
       <section className=" h-[50vh] flex flex-col items-center justify-center text-white text-center"
               style={{ backgroundImage: `url(${b19})` }}
       >
@@ -31,7 +28,6 @@ export default function Blog() {
         <p className="mt-2">Read all case studies about our products!</p>
       </section>
 
-      {/* Blog List */}
       <section className="px-8 py-16 space-y-16">
         {blogs.map((b) => (
           <div key={b.id} className="flex flex-col md:flex-row items-center relative border-b border-gray-300 pb-8">
@@ -54,19 +50,10 @@ export default function Blog() {
                 CONTINUE READING
               </a>
             </div>
-            {/* <h1 className="absolute -top-6 left-0 text-6xl font-extrabold text-gray-200">{b.date}</h1> */}
+          
           </div>
         ))}
       </section>
-
-      {/* Pagination */}
-      {/* <section className="flex justify-center space-x-3 my-8">
-        <a href="#" className="bg-teal-600 text-white px-4 py-2 rounded">1</a>
-        <a href="#" className="bg-teal-600 text-white px-4 py-2 rounded">2</a>
-        <a href="#" className="bg-teal-600 text-white px-4 py-2 rounded">
-          <i className="fa fa-long-arrow-right"></i>
-        </a>
-      </section> */}
 
     </>
   );

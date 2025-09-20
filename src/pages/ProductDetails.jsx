@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { ShoppingCart, X, Loader2 } from "lucide-react"; // Loader2 is spinner
+import { ShoppingCart, X, Loader2 } from "lucide-react"; 
 import ProductCard from "../components/ProductCard";
 import { products } from "../components/Products";
 import sizeChart from "../assets/img/size.webp";
@@ -20,7 +20,7 @@ export default function ProductDetails() {
   const [size, setSize] = useState("");
   const [featured, setFeatured] = useState([]);
   const [showChart, setShowChart] = useState(false);
-  const [loading, setLoading] = useState(null); // "cart" | "buy" | null
+  const [loading, setLoading] = useState(null); 
 const [sizeError, setSizeError] = useState("");
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const [sizeError, setSizeError] = useState("");
   id: product.id,
   title: product.title,
   price: product.price,
-  oldPrice: product.oldPrice,   // ✅ add this
+  oldPrice: product.oldPrice,  
   img: mainImg,
   qty: Number(qty),
   size: size || null,
@@ -62,7 +62,7 @@ const [sizeError, setSizeError] = useState("");
   setSizeError("");
     setLoading("cart");
     addToCartAction();
-    // simulate loading
+   
     setTimeout(() => {
       setLoading(null);
       navigate("/cart");
@@ -87,27 +87,24 @@ const [sizeError, setSizeError] = useState("");
     size: size || null,
   };
 
-  // Save temporarily in localStorage OR pass via navigate state
   localStorage.setItem("checkoutItem", JSON.stringify(item));
 
-  // simulate loading
   setTimeout(() => {
     setLoading(null);
-    navigate("/checkout", { state: { product: item } }); // ✅ pass state
+    navigate("/checkout", { state: { product: item } }); 
   }, 1200);
 }
 
 
   return (
     <div className="min-h-screen">
-      {/* Header */}
+    
       <section className="bg-gray-900 h-48 flex items-center justify-center text-white">
         <h2 className="text-3xl font-semibold">Product Details</h2>
       </section>
 
-      {/* Product Info */}
       <section className="px-4 md:px-12 py-10 grid gap-8 md:grid-cols-2">
-        {/* Left: Images */}
+   
         <div>
           <div className="w-full bg-white rounded-lg overflow-hidden flex items-center justify-center">
             <img
@@ -117,28 +114,8 @@ const [sizeError, setSizeError] = useState("");
             />
           </div>
 
-          {/* <div className="mt-4 grid grid-cols-4 gap-3">
-            {product.img?.map((src, idx) => (
-              <button
-                key={idx}
-                onClick={() => setMainImg(src)}
-                className={`h-20 w-20 sm:h-24 sm:w-24 flex items-center justify-center rounded overflow-hidden border ${
-                  mainImg === src
-                    ? "ring-2 ring-teal-500"
-                    : "border-gray-200"
-                }`}
-              >
-                <img
-                  src={src}
-                  alt={`${product.title}-${idx}`}
-                  className="max-h-full max-w-full object-contain"
-                />
-              </button>
-            ))}
-          </div> */}
         </div>
 
-        {/* Right: Details */}
         <div>
           <p className="text-sm text-gray-500">{product.brand}</p>
           <h1 className="text-2xl md:text-3xl font-bold mt-1">
@@ -155,7 +132,6 @@ const [sizeError, setSizeError] = useState("");
           </div>
           <p className="text-sm text-gray-600 mt-4">{product.description}</p>
 
-          {/* Size */}
           <div className="mt-6 space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -188,7 +164,6 @@ const [sizeError, setSizeError] = useState("");
   )}
             </div>
 
-            {/* Quantity & Buttons */}
             <div className="flex flex-wrap items-center gap-4">
               <label className="block text-sm font-medium text-gray-700">
                 Quantity
@@ -201,7 +176,6 @@ const [sizeError, setSizeError] = useState("");
                 className="w-16 border rounded p-2"
               />
 
-              {/* Buy Now */}
               <button
                 onClick={handleBuyNow}
                 disabled={loading === "buy"}
@@ -216,7 +190,6 @@ const [sizeError, setSizeError] = useState("");
                 )}
               </button>
 
-              {/* Add to Cart */}
               <button
                 onClick={handleAddToCart}
                 disabled={loading === "cart"}
@@ -241,7 +214,6 @@ const [sizeError, setSizeError] = useState("");
         </div>
       </section>
 
-      {/* Featured */}
       <section className="text-center py-12 px-6">
         <h2 className="text-2xl font-bold">Featured Products</h2>
         <p className="text-gray-600">You may also like</p>
@@ -252,7 +224,6 @@ const [sizeError, setSizeError] = useState("");
         </div>
       </section>
 
-      {/* Size Chart Modal */}
       {showChart && (
         <div className="fixed inset-0  bg-opacity-50 flex items-center justify-center z-50 p-4">
           <div className="bg-white rounded-lg shadow-lg w-full max-w-5xl p-6 relative overflow-y-auto max-h-[90vh]">
@@ -267,7 +238,7 @@ const [sizeError, setSizeError] = useState("");
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="overflow-x-auto">
-                {/* Size Chart Table */}
+              
                 <table className="w-full border text-sm">
                   <thead className="bg-gray-100 text-center">
                     <tr>
@@ -316,7 +287,6 @@ const [sizeError, setSizeError] = useState("");
                 </table>
               </div>
 
-              {/* Instructions */}
               <div>
                 <h4 className="font-semibold mb-2">Measuring T-Shirt Size</h4>
                 <p className="text-sm text-gray-600 mb-2">

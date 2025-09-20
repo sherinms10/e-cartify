@@ -1,4 +1,4 @@
-// src/data/products.js
+
 import p1 from "../assets/img/products/p1.webp"
 import p2 from "../assets/img/products/p2.webp"
 import p3 from "../assets/img/products/p3.webp"

@@ -1,18 +1,14 @@
-// src/pages/ThankYou.jsx
+
 import { Link } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 export default function ThankYou() {
   return (
     <>
-      {/* Page Header */}
       <section className="bg-gray-900 h-[40vh] flex flex-col justify-center items-center text-white text-center">
         <h2 className="text-4xl font-bold">Order Confirmed 🎉</h2>
         <p className="mt-2">Thank you for your purchase!</p>
       </section>
 
-      {/* Minimal Confirmation */}
       <section className="px-6 py-16 flex flex-col items-center text-center">
         <p className="text-gray-700 mb-6">
           Your order has been placed successfully.

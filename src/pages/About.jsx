@@ -1,7 +1,4 @@
-// src/pages/About.jsx
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import Newsletter from "../components/Newsletter";
+
 import banner from "../assets/img/about/banner.png"
 import a6 from "../assets/img/about/a6.jpg"
 import f1 from "../assets/img/features/f1.png"
@@ -19,7 +16,6 @@ export default function About() {
   return (
     <>
 
-      {/* Page Header */}
       <section className=" h-[50vh] flex flex-col items-center justify-center text-white text-center"
                     style={{ backgroundImage: `url(${banner})` }}
       >
@@ -27,7 +23,7 @@ export default function About() {
         <p className="mt-2">Making shopping simple, secure, and reliable for everyone, everywhere.</p>
       </section>
 
-      {/* About Section */}
+    
       <section className="flex flex-col md:flex-row items-center gap-8 px-8 py-16">
         <img src={a6} alt="About" className="w-full md:w-1/2 rounded-lg shadow-lg" />
         <div className="md:w-1/2">
@@ -47,7 +43,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Video Section */}
+    
       <section className="text-center px-8 py-16">
         <h1 className="text-3xl font-bold">
           Download our <a href="#" className="text-teal-600 hover:underline">App</a>
@@ -63,7 +59,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Features */}
+   
        <section
               id="feature"
               className="flex flex-wrap justify-center gap-6 py-12 px-6"

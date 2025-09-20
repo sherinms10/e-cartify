@@ -1,6 +1,6 @@
-// src/pages/Contact.jsx
+
 import { useState, useEffect } from "react";
-import { Calendar, Clock10, MapPin, Phone, ChevronLeft, ChevronRight, Mail } from "lucide-react";
+import { Calendar, Clock10, MapPin, Phone,  Mail } from "lucide-react";
 import person1 from "../assets/img/people/per1.jpeg";
 import person2 from "../assets/img/people/per2.jpeg";
 import person3 from "../assets/img/people/per3.jpeg";
@@ -36,7 +36,7 @@ const testimonials = [
 export default function Contact() {
   const [current, setCurrent] = useState(0);
 
-  // Auto-slide
+  
   useEffect(() => {
     const interval = setInterval(() => {
       goToNext();
@@ -56,7 +56,7 @@ export default function Contact() {
 
   return (
     <>
-      {/* Page Header */}
+   
       <section
         className="h-[50vh] flex flex-col items-center justify-center text-white text-center bg-cover bg-center"
         style={{ backgroundImage: `url(${banner})` }}
@@ -65,7 +65,6 @@ export default function Contact() {
         <p className="mt-2">LEAVE A MESSAGE, We love to hear from you!</p>
       </section>
 
-      {/* Contact Details */}
       <section className="px-8 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div>
           <span className="uppercase text-sm text-gray-500">Get In Touch</span>
@@ -82,7 +81,7 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Map */}
+       
           <div className="rounded-lg overflow-hidden shadow-lg">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.9129281437517!2d80.23062597373311!3d13.041214113350945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267408a65c97d%3A0x5fbdfb8ea275616c!2sZudio%20-%20T%20Nagar%2C%20Chennai!5e0!3m2!1sen!2sin!4v1757573176430!5m2!1sen!2sin"
@@ -96,9 +95,9 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Form + Testimonials */}
+     
       <section className="px-8 py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Contact Form */}
+       
         <form className="flex flex-col space-y-4">
           <span className="uppercase text-sm text-gray-500">Leave a Message</span>
           <h1 className="text-3xl font-bold mb-4">We love to hear from you</h1>
@@ -111,7 +110,6 @@ export default function Contact() {
           </button>
         </form>
 
-        {/* Testimonials */}
         <div className="relative max-w-xl mx-auto">
           <div className="bg-white p-6 rounded-lg shadow-md ">
             <div className="flex gap-4 mb-4 ">
@@ -127,28 +125,12 @@ export default function Contact() {
                 <p className="text-sm text-gray-600">{testimonials[current].position}</p>
               </div>
             </div>
-            {/* <p className="text-gray-600 italic mb-4">"{testimonials[current].comment}"</p> */}
             <div className="flex  gap-2 items-center text-gray-600 text-sm">
               <p className="flex items-center gap-2"><Phone className="w-4 h-4" /> {testimonials[current].phone}</p>
               <p className="flex items-center gap-2"><Mail className="w-4 h-4" /> {testimonials[current].email}</p>
             </div>
           </div>
 
-          {/* Navigation */}
-          {/* <button
-            onClick={goToPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 bg-white rounded-full p-2 shadow-md hover:bg-red-100"
-          >
-            <ChevronLeft className="h-5 w-5 text-red-600" />
-          </button>
-          <button
-            onClick={goToNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-6 bg-white rounded-full p-2 shadow-md hover:bg-red-100"
-          >
-            <ChevronRight className="h-5 w-5 text-red-600" />
-          </button> */}
-
-          {/* Dots */}
           <div className="flex justify-center mt-6 space-x-2">
             {testimonials.map((_, index) => (
               <button

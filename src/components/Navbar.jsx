@@ -2,7 +2,6 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { X, Menu, ShoppingCart } from "lucide-react";
 import logo from "../assets/img/logo.png";
-import ecart from "../assets/img/ecart.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -16,12 +15,10 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-gray-100 shadow-md">
       <div className="flex justify-between items-center px-6 py-4">
-        {/* Logo */}
         <NavLink to="/">
           <img src={logo} alt="Logo" className="h-10" />
         </NavLink>
 
-        {/* Desktop Menu */}
         <ul className="hidden md:flex items-center space-x-6 font-semibold" id="navbar">
           <li><NavLink to="/" className={linkClass}>Home</NavLink></li>
           <li><NavLink to="/shop" className={linkClass}>Shop</NavLink></li>
@@ -30,20 +27,17 @@ export default function Navbar() {
           <li><NavLink to="/contact" className={linkClass}>Contact</NavLink></li>
         </ul>
 
-        {/* Cart Icon */}
         <div>
           <NavLink to="/cart" className={linkClass}>
             <ShoppingCart className="w-6 h-6" />
           </NavLink>
         </div>
 
-        {/* Mobile Menu Button */}
         <button onClick={() => setOpen(!open)} className="md:hidden">
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {open && (
         <ul className="flex flex-col items-center space-y-4 px-6 py-4 bg-gray-200 md:hidden font-semibold" id="navbar">
           <li><NavLink to="/" className={linkClass} onClick={() => setOpen(false)}>Home</NavLink></li>

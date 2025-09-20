@@ -2,7 +2,7 @@ export default function Newsletter() {
   return (
     <section className="bg-blue-900 text-white px-6 sm:px-8 py-10 sm:py-12">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-        {/* Left text */}
+      
         <div className="text-center md:text-left">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
             Sign Up For Newsletters
@@ -13,7 +13,6 @@ export default function Newsletter() {
           </p>
         </div>
 
-        {/* Input + Button */}
         <form className="flex w-full sm:w-auto justify-center">
           <input
             type="email"

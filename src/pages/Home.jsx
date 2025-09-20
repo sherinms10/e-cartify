@@ -31,11 +31,9 @@ export default function Home() {
 
     const navigate = useNavigate();
   
-      // hero images list
   const images = [hero,hero1, hero2, hero3, hero4];
   const [index, setIndex] = useState(0);
 
-  // Auto-slide every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
@@ -45,17 +43,12 @@ export default function Home() {
 
   return (
     <div className="font-sans">
-      {/* Hero Section */}
+     
       <section
       id="hero"
       className="relative bg-cover bg-right-top h-[90vh] flex flex-col justify-center items-start px-8 md:px-20 transition-all duration-700 ease-in-out"
       style={{ backgroundImage: `url(${images[index]})` }}
     >
-    {/* <section
-        id="hero"
-        className=" bg-cover bg-right-top h-[90vh] flex flex-col justify-center items-start px-8 md:px-20"
-        style={{ backgroundImage: `url(${hero})` } }
-      ></section> */}
       <div className="bg-black/40 absolute inset-0" /> 
 
       <div className="relative z-10">
@@ -78,7 +71,6 @@ export default function Home() {
         </button>
       </div>
 
-      {/* Dots navigation */}
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-3">
         {images.map((_, i) => (
           <button
@@ -92,7 +84,6 @@ export default function Home() {
       </div>
     </section>
 
-      {/* Features */}
       <section
         id="feature"
         className="flex flex-wrap justify-center gap-6 py-12 px-6"
@@ -117,7 +108,6 @@ export default function Home() {
         ))}
       </section>
 
-     {/* Featured Products */}
  <section id="product1" className="text-center py-12 px-6">
         <h1 className="text-3xl font-bold">Featured Products</h1>
         <p className="text-gray-600">Summer Collection New Modern Design</p>
@@ -129,7 +119,6 @@ export default function Home() {
       </section>
 
 
-      {/* Banner */}
       <section
         id="banner"
         className=" bg-cover bg-center h-[40vh] flex flex-col justify-center items-center text-center text-white"
@@ -148,7 +137,6 @@ export default function Home() {
         </button>
       </section>
 
-   {/* New Arrivals */}
 <section id="new" className="text-center py-12 px-6">
         <h1 className="text-3xl font-bold">New Arrivals</h1>
         <p className="text-gray-600">Latest Fashion Picks</p>
@@ -160,7 +148,6 @@ export default function Home() {
       </section>
 
 
-      {/* Small Banners */}
       <section id="sm-banner" className="flex flex-wrap justify-center gap-6 px-6">
         <div
           className="w-full md:w-[580px] h-[50vh]  bg-cover bg-center flex flex-col justify-center items-start p-6 text-white"
@@ -186,7 +173,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Triple Banner */}
       <section id="banner3" className="flex flex-wrap justify-between gap-6 px-6 py-12">
         <div className="w-full md:w-[30%] h-[30vh] bg-cover flex flex-col justify-center items-start p-6 text-white"
         style={{ backgroundImage: `url(${b7})` }}
